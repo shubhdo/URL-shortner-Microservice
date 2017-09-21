@@ -14,6 +14,10 @@ mongoose.connect(url, {
     useMongoClient: true
 });
 
+app.get('/',(req,res)=> {
+    res.sendFile(__dirname+'/index.html')
+})
+
 app.get('/new/*', (req, res) => {
     const url = req.params['0']
     console.log(url)
